@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Shift | 10-Day Quantum Transformation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37", // Metallic Gold
+              "accent-teal": "#1A4D4E",
+              "background-light": "#FDFCFB",
+              "background-dark": "#0B1617",
+            },
+            fontFamily: {
+              display: ["Cormorant Garamond", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              "xl": "1.5rem",
+            },
+            backgroundImage: {
+              'marble-texture': "url('image-2.png')",
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        .gold-gradient-text {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border: 1px solid transparent;
+            background: linear-gradient(theme('colors.background-dark'), theme('colors.background-dark')) padding-box,
+                        linear-gradient(to right, #BF953F, #FCF6BA, #AA771C) border-box;
+        }
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        .teal-overlay {
+            background: linear-gradient(rgba(11, 22, 23, 0.8), rgba(11, 22, 23, 0.95));
+        }
+        .light-hero {
+            filter: brightness(0.9);
+        }
+        .dark-hero {
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300">
+<nav class="fixed w-full z-50 backdrop-blur-md border-b border-primary/10 bg-background-light/25 dark:bg-background-dark/25">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<a class="text-3xl font-display font-semibold gold-gradient-text tracking-widest uppercase" href="#">The Shift</a>
+<div class="hidden md:flex gap-8 items-center text-sm tracking-widest uppercase">
+<a class="hover:text-primary transition-colors" href="#concept">The Concept</a>
+<a class="hover:text-primary transition-colors" href="#program">The Journey</a>
+<a class="bg-primary text-background-dark px-6 py-2 rounded-full font-medium hover:brightness-110 transition-all" href="#signup">Join Now</a>
+</div>
+<button class="p-2 rounded-full border border-primary/20 hover:bg-primary/5 transition-all" onclick="toggleTheme()">
+<span id="theme-icon" class="material-icons-outlined text-primary">dark_mode</span>
+</button>
+</div>
+</nav>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+ <img alt="Teal marble background with gold veins" class="w-full h-full object-cover opacity-100 dark:opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt4OdMFrPQIRfjTcmOCVCUYbfKuavUJh16J1WnWWnqUtJhnWaZtU6hLnIUEoPrYVJYcTOiHXGmsmqPI5mJOvZVtD9XaC6vYib9mUBne98YvtASXPnJq5io9diRrGfOaIHp7H7O4EeE5vwfSpqhqtF0fr2BH8Zrf5j2BLY-EdgYvW6pK1qMQQmGuG_Lx03xj004deXxxEsFwdgzMqxKH0e3JHwz6yOfVK9zynPI9iUSuthw_oGIgnUFzC2y_l9V4-A-9RhuRdyHAQPY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/30 to-background-light dark:via-background-dark/30 dark:to-background-dark"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+<h1 class="text-7xl md:text-9xl font-display font-light mb-6 tracking-tight leading-none animate-fade-in">
+                The <span class="gold-gradient-text italic font-semibold">Shift</span>
+</h1>
+<p class="text-xl md:text-3xl font-display italic text-slate-600 dark:text-slate-400 mb-10 tracking-wide">
+                The 10-Day Quantum Leap into Your New Identity
+            </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<a class="group relative px-10 py-4 bg-primary text-background-dark font-semibold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 glow-effect" href="#signup">
+<span class="relative z-10 uppercase tracking-widest">Begin Your Ascension</span>
+</a>
+<p class="text-sm uppercase tracking-[0.3em] opacity-60">Limited Energetic Portal Opening</p>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-icons-outlined text-primary text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<section class="py-24 relative overflow-hidden bg-white dark:bg-[#080f10]" id="concept">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-xl blur-2xl group-hover:bg-primary/30 transition-all"></div>
+<img alt="Woman's face in ethereal golden light" class="relative rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT-l79qSn7X8_yfC9d5K3jK2gt-rcnvQZfe_bbzMWXYvKzQzyJA2bBg5lcOVLdD0yMcAnhMu5PWIg6mzNKwJLqPvTQDQdK8vYS3fza56tbmVImULAlNCblaK0XgbLV595teWjRYudjxi4i2G0L5eaKsQwQlmKPJInCAp6DvjHx9UVE9JAqf5k_w7n1oPxTzxio0m_9175I4rnY4lqtfWyO08uaeOO5NMkTE_Io9LgGol47ikV1mrkMuuAP8dFFKMyeV46dd9Jh1uSW"/>
+<div class="absolute inset-0 rounded-xl ring-1 ring-primary/30"></div>
+</div>
+<div class="space-y-8">
+<h2 class="text-4xl md:text-5xl font-display leading-tight">
+                    Burn the Old Frame to Reveal the <span class="text-primary italic">Golden Self</span>
+</h2>
+<div class="prose prose-lg dark:prose-invert prose-slate">
+<p class="text-lg leading-relaxed italic border-l-2 border-primary pl-6">
+                        "Real transformation isn't an addition; it's a renovation. An identity collapse that allows your true gold frequency to emerge."
+                    </p>
+<p>
+                        In this 10-day immersive portal, we dismantle the glass ceilings of your current reality. We aren't just changing habits—we are shifting the very vibration of who you believe yourself to be.
+                    </p>
+<p>
+                        Through precise energetic clearing and quantum frequency modulation, you will step out of the shadows and into the blinding radiance of your highest timeline.
+                    </p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-icons-outlined">auto_awesome</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Frequency Work</span>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-icons-outlined">psychology</span>
+<span class="text-sm font-semibold uppercase tracking-widest">Identity Re-Coding</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50 dark:bg-background-dark/50 border-y border-primary/10" id="program">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-5xl font-display mb-4">The 10-Day Ascension Protocol</h2>
+<div class="w-24 h-px bg-primary mx-auto mb-6"></div>
+<p class="max-w-2xl mx-auto text-slate-500 dark:text-slate-400">A structured metamorphosis designed to collapse time and bridge the gap between where you are and where you are destined to be.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-all group">
+<div class="text-primary font-display text-4xl mb-4 italic">Phase 01</div>
+<h3 class="text-xl font-semibold mb-3 tracking-wide group-hover:text-primary transition-colors">The Collapse</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Days 1-3: Identify the subconscious anchors keeping you in a loop. Energy clearing to dissolve the existing identity frame and 'burn the dead wood'.
+                    </p>
+</div>
+<div class="p-8 rounded-2xl bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-all group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="text-primary font-display text-4xl mb-4 italic">Phase 02</div>
+<h3 class="text-xl font-semibold mb-3 tracking-wide group-hover:text-primary transition-colors">The Renovation</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Days 4-7: Quantum frequency modulation. Re-coding the neural pathways and energetic field with your 'Gold Frequency'. Constructing the new mental architecture.
+                    </p>
+</div>
+<div class="p-8 rounded-2xl bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-all group">
+<div class="text-primary font-display text-4xl mb-4 italic">Phase 03</div>
+<h3 class="text-xl font-semibold mb-3 tracking-wide group-hover:text-primary transition-colors">The Ascension</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Days 8-10: Solidifying the new identity. Practical application of the shift and anchoring your new timeline into physical reality. Final ceremony.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Close up of a golden eye" class="w-full h-full object-cover opacity-60 dark:opacity-40" src="https://akademie.annielauer.com/wp-content/uploads/2026/01/the-shift-eye.webp"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background-light dark:from-background-dark to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="md:w-1/2 space-y-6">
+<span class="text-primary uppercase tracking-[0.5em] text-xs font-bold">The Vision</span>
+<h2 class="text-5xl font-display leading-tight italic">See the world through <span class="gold-gradient-text not-italic font-bold">New Eyes</span></h2>
+<p class="text-lg text-slate-600 dark:text-slate-300">
+                    Your perception creates your reality. When you shift your internal frequency, the external world has no choice but to reorganize itself to match your new state of being.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+<div class="text-2xl font-display text-primary">100%</div>
+<div class="text-xs uppercase tracking-tighter opacity-70">Internal Alignment</div>
+</div>
+<div class="p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
+<div class="text-2xl font-display text-primary">Quantum</div>
+<div class="text-xs uppercase tracking-tighter opacity-70">Identity Leap</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark" id="signup">
+<div class="max-w-4xl mx-auto px-6">
+<div class="relative gold-border p-12 rounded-3xl bg-background-light dark:bg-[#0c1a1b] overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img alt="Abstract marble" class="w-full h-full object-cover" src="https://akademie.annielauer.com/wp-content/uploads/2026/01/the-shift-sand.webp"/>
+</div>
+<div class="relative z-10 text-center mb-10">
+<h2 class="text-4xl font-display mb-4">Step Into The Shift</h2>
+<p class="text-slate-500 dark:text-slate-400">Join the next cohort of souls ready for the ultimate identity renovation. Input your details to receive the entry sequence.</p>
+</div>
+<form class="relative z-10 grid gap-6" onsubmit="event.preventDefault(); alert('The frequency has been transmitted. Check your inbox.');">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest font-semibold text-primary">Full Name</label>
+<input class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary transition-all text-slate-800 dark:text-white" placeholder="Your Name" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest font-semibold text-primary">E-mail Frequency</label>
+<input class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary transition-all text-slate-800 dark:text-white" placeholder="your@portal.com" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs uppercase tracking-widest font-semibold text-primary">Why now?</label>
+<textarea class="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary transition-all text-slate-800 dark:text-white h-32" placeholder="Describe your current energetic bottleneck..." required=""></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-background-dark font-bold uppercase tracking-[0.2em] rounded-lg hover:brightness-110 active:scale-[0.99] transition-all glow-effect shadow-xl" type="submit">
+                        Claim Your Transformation
+                    </button>
+<p class="text-[10px] text-center uppercase tracking-widest opacity-40">By joining, you agree to enter the field of radical responsibility.</p>
+</form>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-primary/10 dark:bg-[#050a0b]">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<a class="text-2xl font-display font-semibold gold-gradient-text tracking-widest" href="#">THE SHIFT</a>
+<div class="text-sm opacity-50 font-light tracking-wide">
+                © 2026 annielauer.com.
+            </div>
+<div class="flex gap-6">
+<a class="opacity-60 hover:opacity-100 transition-opacity" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.247 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.063 1.366-.335 2.633-1.31 3.608-.975.975-2.242 1.247-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.063-2.633-.335-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.063-1.366.335-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.058 1.281-.072 1.688-.072 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.688.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.688.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.688-.072-4.948-.072zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="opacity-60 hover:opacity-100 transition-opacity" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const icon = document.getElementById('theme-icon');
+            if (document.documentElement.classList.contains('dark')) {
+                icon.textContent = 'wb_sunny';
+            } else {
+                icon.textContent = 'dark_mode';
+            }
+        }
+    </script>
+
+</body></html>
