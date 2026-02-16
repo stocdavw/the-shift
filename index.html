@@ -148,12 +148,12 @@
 
             <div class="relative">
                 <button aria-label="Vorherige Testimonials"
-                    class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-primary/40 text-primary bg-background-light/80 dark:bg-background-dark/70 backdrop-blur-md shadow-lg hover:brightness-110 transition-all absolute -left-6 top-1/2 -translate-y-1/2 z-10"
+                    class="flex items-center justify-center w-12 h-12 rounded-full border border-primary/40 text-primary bg-background-light/80 dark:bg-background-dark/70 backdrop-blur-md shadow-lg hover:brightness-110 transition-all absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 scale-75 md:scale-100 opacity-60 md:opacity-100"
                     data-scroll="left">
                     <span class="material-icons-outlined">chevron_left</span>
                 </button>
                 <button aria-label="Nächste Testimonials"
-                    class="hidden md:flex items-center justify-center w-12 h-12 rounded-full border border-primary/40 text-primary bg-background-light/80 dark:bg-background-dark/70 backdrop-blur-md shadow-lg hover:brightness-110 transition-all absolute -right-6 top-1/2 -translate-y-1/2 z-10"
+                    class="flex items-center justify-center w-12 h-12 rounded-full border border-primary/40 text-primary bg-background-light/80 dark:bg-background-dark/70 backdrop-blur-md shadow-lg hover:brightness-110 transition-all absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 scale-75 md:scale-100 opacity-60 md:opacity-100"
                     data-scroll="right">
                     <span class="material-icons-outlined">chevron_right</span>
                 </button>
@@ -715,6 +715,7 @@
                 };
 
                 let isRerouting = false;
+
                 const normalizeScroll = () => {
                     if (isRerouting) return;
                     const width = getItemWidth();
@@ -723,11 +724,15 @@
 
                     if (testimonialsViewport.scrollLeft <= width * 0.5) {
                         isRerouting = true;
+                        testimonialsViewport.style.scrollBehavior = 'auto';
                         testimonialsViewport.scrollLeft += setSize;
+                        testimonialsViewport.style.scrollBehavior = 'smooth';
                         setTimeout(() => isRerouting = false, 50);
                     } else if (testimonialsViewport.scrollLeft >= setSize * 2 - width * 0.5) {
                         isRerouting = true;
+                        testimonialsViewport.style.scrollBehavior = 'auto';
                         testimonialsViewport.scrollLeft -= setSize;
+                        testimonialsViewport.style.scrollBehavior = 'smooth';
                         setTimeout(() => isRerouting = false, 50);
                     }
                 };
@@ -765,33 +770,12 @@
                         const delta = direction === 'left' ? -1 : 1;
                         const nextIndex = currentIndex + delta;
                         scrollToIndex(nextIndex);
-                        resetAutoPlay();
                     });
                 });
-
-                // Auto-play feature
-                let autoPlayInterval;
-                const startAutoPlay = () => {
-                    autoPlayInterval = setInterval(() => {
-                        const currentIndex = getCenteredIndex();
-                        scrollToIndex(currentIndex + 1);
-                    }, 4000);
-                };
-
-                const resetAutoPlay = () => {
-                    clearInterval(autoPlayInterval);
-                    startAutoPlay();
-                };
 
                 testimonialsViewport.addEventListener('scroll', () => {
                     normalizeScroll();
                 });
-
-                // Pause on interaction
-                testimonialsViewport.addEventListener('touchstart', () => clearInterval(autoPlayInterval), { passive: true });
-                testimonialsViewport.addEventListener('touchend', resetAutoPlay, { passive: true });
-                testimonialsViewport.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-                testimonialsViewport.addEventListener('mouseleave', resetAutoPlay);
 
                 let resizeTimer;
                 window.addEventListener('resize', () => {
@@ -802,7 +786,6 @@
                 // Initial setup
                 setTimeout(() => {
                     setInitialPosition();
-                    startAutoPlay();
                 }, 100);
             }
         }
