@@ -159,10 +159,10 @@
                 </button>
 
                 <div data-testimonials class="overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth no-scrollbar">
-                    <div class="flex gap-6 md:gap-8 px-1 md:px-0 min-w-max" data-testimonials-track>
+                    <div class="flex flex-row flex-nowrap gap-6 md:gap-8 px-1 md:px-0" data-testimonials-track>
 
                         <!-- Testimonial 1 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -173,7 +173,7 @@
                         </div>
 
                         <!-- Testimonial 2 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -184,7 +184,7 @@
                         </div>
 
                         <!-- Testimonial 3 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -195,7 +195,7 @@
                         </div>
 
                         <!-- Testimonial 4 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -206,7 +206,7 @@
                         </div>
 
                         <!-- Testimonial 5 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -217,7 +217,7 @@
                         </div>
 
                         <!-- Testimonial 6 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -228,7 +228,7 @@
                         </div>
 
                         <!-- Testimonial 7 -->
-                        <div class="snap-center flex-shrink-0 w-11/12 sm:w-96 md:w-[420px] lg:w-[480px]"
+                        <div class="snap-center flex-shrink-0 w-[85vw] sm:w-96 md:w-[420px] lg:w-[480px]"
                             data-testimonial-item>
                             <div
                                 class="bg-white/95 dark:bg-[#0b1314] rounded-2xl shadow-2xl dark:shadow-[0_20px_60px_rgba(212,175,55,0.12)] overflow-hidden border border-primary/15 dark:border-primary/25">
@@ -658,7 +658,7 @@
 
     <script>
         // Intersection Observer for scroll animations
-        const observerOptions = { threshold: 0.1 };
+        const observerOptions = { threshold: 0.01 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -700,7 +700,7 @@
                 );
 
                 const getItemWidth = () => {
-                    const sample = allItems[0];
+                    const sample = originalItems[0];
                     if (!sample) return 0;
                     const style = window.getComputedStyle(testimonialsTrack);
                     const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
@@ -709,18 +709,26 @@
 
                 const setInitialPosition = () => {
                     const width = getItemWidth();
+                    if (!width) return;
                     const offset = width * originalItems.length;
                     testimonialsViewport.scrollLeft = offset;
                 };
 
+                let isRerouting = false;
                 const normalizeScroll = () => {
+                    if (isRerouting) return;
                     const width = getItemWidth();
                     if (!width) return;
                     const setSize = width * originalItems.length;
+
                     if (testimonialsViewport.scrollLeft <= width * 0.5) {
+                        isRerouting = true;
                         testimonialsViewport.scrollLeft += setSize;
+                        setTimeout(() => isRerouting = false, 50);
                     } else if (testimonialsViewport.scrollLeft >= setSize * 2 - width * 0.5) {
+                        isRerouting = true;
                         testimonialsViewport.scrollLeft -= setSize;
+                        setTimeout(() => isRerouting = false, 50);
                     }
                 };
 
@@ -756,19 +764,46 @@
                         const currentIndex = getCenteredIndex();
                         const delta = direction === 'left' ? -1 : 1;
                         const nextIndex = currentIndex + delta;
-                        scrollToIndex(nextIndex < 0 ? allItems.length - 1 : nextIndex % allItems.length);
+                        scrollToIndex(nextIndex);
+                        resetAutoPlay();
                     });
                 });
+
+                // Auto-play feature
+                let autoPlayInterval;
+                const startAutoPlay = () => {
+                    autoPlayInterval = setInterval(() => {
+                        const currentIndex = getCenteredIndex();
+                        scrollToIndex(currentIndex + 1);
+                    }, 4000);
+                };
+
+                const resetAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                    startAutoPlay();
+                };
 
                 testimonialsViewport.addEventListener('scroll', () => {
                     normalizeScroll();
                 });
 
+                // Pause on interaction
+                testimonialsViewport.addEventListener('touchstart', () => clearInterval(autoPlayInterval), { passive: true });
+                testimonialsViewport.addEventListener('touchend', resetAutoPlay, { passive: true });
+                testimonialsViewport.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                testimonialsViewport.addEventListener('mouseleave', resetAutoPlay);
+
+                let resizeTimer;
                 window.addEventListener('resize', () => {
-                    setInitialPosition();
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(setInitialPosition, 200);
                 });
 
-                setInitialPosition();
+                // Initial setup
+                setTimeout(() => {
+                    setInitialPosition();
+                    startAutoPlay();
+                }, 100);
             }
         }
 
